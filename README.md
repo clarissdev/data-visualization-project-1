@@ -1,5 +1,11 @@
 # Data Visualization Project 1
 
+## Member
+
+- Dinh Van Thanh
+- Nguyen Tiet Nguyen Khoi
+- To Ba Son
+
 ## Dataset
 
 Dataset name: Educational attainment of young people in English towns.
@@ -62,11 +68,17 @@ In this project, we aim to answer two main questions:
 - Additional variables: educational outcomes: `key_stage_2_attainment_school_year_2007_to_2008`, `key_stage_4_attainment_school_year_2012_to_2013`, `highest_level_qualification_achieved_by_age_22_average_score`
 - Tentative approach: By creating aggregated variables or perform transformations to analyze the data, we will examine the relationship between educational outcomes and socio-economic factors.
 
-**Question 2: What are some potential underlying reasons for the observed differences in educational attainment among young people across coastal and non-coastal towns in England?**
+**Question 2: England is known as a country in which coastal towns are considered left behind in socio-economy compared to non-coastal towns. What are some potential underlying reasons for the observed differences in educational attainment among young people across coastal and non-coastal towns in England?**
 
 - Variables included:
   - Coastal indicator: `coastal`
   - Size of the town: `size_flag`
   - Presence of universities: `university_flag`
   - Socio-economic factors: `income_flag`, `job_density_flag`, `population_2011`
-- Tentative approach: We'll compare the educational outcomes between coastal and non-coastal towns. Additionally, we'll explore potential mediating or moderating effects of town size and university presence on the relationship between coastal indicator and educational attainment.
+  
+**Tentative approach**: We'll compare the educational outcomes between coastal and non-coastal towns. Additionally, we'll explore the potential mediating or moderating effects of town size and university presence on the relationship between coastal indicators and educational attainment.
+
+- Some potential approaches are:
+  - Box plot and bar plot with comparisons between coastal and non-coastal towns on different attributes including `income_flag`, `job_density_flag`.
+  - Data transformation: calculate the income per person based on `income_flag` and `population_2011`, average `education_score` comparison between coastal and non-coastal towns (aggregation).
+  - Other plots such as geometry-based plot (if possible), etc. Different visualizations will be tested and applied to this dataset.

@@ -54,19 +54,23 @@ This dataset provides a comprehensive view of the factors influencing educationa
 
 In this project, we aim to answer two main questions:
 
-- How do socio-economic factors, such as income deprivation and job density, correlate with the educational outcomes of young people in English towns?
+- How do the patterns of educational attainment among young people in English towns vary based on the types of activities they engage in at age 19, and what role do socio-economic factors play in shaping these patterns?
 - What are some potential underlying reasons for the observed differences in educational attainment among young people across coastal and non-coastal towns in England?
 
 ## Plan for Answering the questions:
 
-**Question 1: How do socio-economic factors, such as income deprivation and job density, correlate with the educational outcomes of young people in English towns?**
+**Question 1: How do the patterns of educational attainment among young people in English towns vary based on the types of activities they engage in at age 19, and what role do socio-economic factors play in shaping these patterns?**
 
 - Variables included:
-  - Income-related variables: `income_flag`, `population_2011`.
-  - Job density: `job_density_flag`.
-  - Level of education of residents aged 35-64: `level4qual_residents35_64_2011`
-- Additional variables: educational outcomes: `key_stage_2_attainment_school_year_2007_to_2008`, `key_stage_4_attainment_school_year_2012_to_2013`, `highest_level_qualification_achieved_by_age_22_average_score`
-- Tentative approach: By creating aggregated variables or perform transformations to analyze the data, we will examine the relationship between educational outcomes and socio-economic factors.
+  - Activities at age 19: `activity_at_age_19_full_time_higher_education`, `activity_at_age_19_sustained_further_education`, `activity_at_age_19_apprenticeships`, `activity_at_age_19_employment_with_earnings_above_0`, `activity_at_age_19_employment_with_earnings_above_10_000`, `activity_at_age_19_out_of_work`
+  - Socio-economic factors: `income_flag`, `job_density_flag`, `population_2011`
+  - Educational outcomes: `key_stage_2_attainment_school_year_2007_to_2008`, `key_stage_4_attainment_school_year_2012_to_2013`, `highest_level_qualification_achieved_by_age_22_average_score`
+
+Tentative approach:
+
+- Examine the distribution of various activities among young people at age 19 across different towns.
+- Analyze how engagement in different activities correlates with educational outcomes.
+- Investigate the influence of socio-economic factors on the likelihood of young people engaging in specific activities and their subsequent educational attainment.
 
 **Question 2: England is known as a country in which coastal towns are considered left behind in socio-economy compared to non-coastal towns. What are some potential underlying reasons for the observed differences in educational attainment among young people across coastal and non-coastal towns in England?**
 
@@ -75,7 +79,7 @@ In this project, we aim to answer two main questions:
   - Size of the town: `size_flag`
   - Presence of universities: `university_flag`
   - Socio-economic factors: `income_flag`, `job_density_flag`, `population_2011`
-  
+
 **Tentative approach**: We'll compare the educational outcomes between coastal and non-coastal towns. Additionally, we'll explore the potential mediating or moderating effects of town size and university presence on the relationship between coastal indicators and educational attainment.
 
 - Some potential approaches are:

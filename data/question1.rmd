@@ -1,0 +1,78 @@
+# Task 1
+
+```{r}
+data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-23/english_education.csv')
+```
+```{r}
+data
+```
+
+```{r}
+ggplot(data, aes(x = key_stage_4_attainment_school_year_2012_to_2013, 
+                           y = activity_at_age_19_full_time_higher_education)) +
+  geom_point(color = "steelblue") +
+  labs(title = "Educational Attainment vs. Activities at Age 19",
+       x = "Key Stage 4 Attainment",
+       y = "Proportion in Full-time Higher Education") +
+  theme_minimal()
+```
+
+```{r}
+# Create a scatter plot
+ggplot(data, aes(x = key_stage_2_attainment_school_year_2007_to_2008, 
+                           y = activity_at_age_19_out_of_work)) +
+  geom_point(color = "steelblue") +
+  labs(title = "Educational Attainment vs. Activities at Age 19",
+       x = "Key Stage 2 Attainment",
+       y = "Proportion in Full-time Out Of Work") +
+  theme_minimal()
+
+ggplot(data, aes(x = key_stage_4_attainment_school_year_2012_to_2013, 
+                           y = activity_at_age_19_out_of_work)) +
+  geom_point(color = "steelblue") +
+  labs(title = "Educational Attainment vs. Activities at Age 19",
+       x = "Key Stage 4 Attainment",
+       y = "Proportion in Full-time Out Of Work") +
+  theme_minimal()
+```
+
+
+```{r}
+filtered_data <- data[data$income_flag %in% c("Higher deprivation towns", "Mid deprivation towns", "Lower deprivation towns"), ]
+
+ggplot(filtered_data, aes(x = income_flag, y = education_score)) +
+  geom_boxplot() +
+  labs(x = "Income Flag", y = "Education Score") +
+  ggtitle("Key Stage 4 Attainment by Income Flag")
+```
+
+```{r}
+# Filter the data for the selected town size categories
+data_filtered <- subset(data, size_flag %in% c("Small Towns", "Medium Towns", "Large Towns"))
+
+# Calculate average educational score for each town size category
+average_scores <- data_filtered %>%
+  group_by(size_flag) %>%
+  summarise(avg_education_score = mean(education_score, na.rm = TRUE))
+
+# Plot the jitter plot with average line segments and annotations
+ggplot(
+  data_filtered,
+  aes(x = size_flag, y = education_score)
+) +
+  geom_jitter(alpha = 0.5, color = "steelblue") +
+  geom_segment(data = average_scores,
+               aes(x = as.numeric(factor(size_flag)) - 0.5, y = avg_education_score, 
+                   xend = as.numeric(factor(size_flag)) + 0.5, yend = avg_education_score),
+              size = 0.5) +
+  annotate("text", x = 0.4, y = -6.2, 
+           label = paste("Average Attainment Score"),
+           size = 3, hjust = -0.2) +
+  geom_segment(aes(x = 0.55, xend = 0.55, y = -5.5, yend = average_scores$avg_education_score[1]),
+               arrow = arrow(type = "closed", length = unit(0.1, "inches")), size = 0.1) +
+  labs(
+    x = "Town Size Category", y = "Attainment Score",
+    title = "Educational Attainments in different town sizes"
+  ) +
+  theme(axis.text.x = element_text(hjust = 1))
+```        

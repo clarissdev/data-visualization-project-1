@@ -1,3 +1,10 @@
+---
+title: "q2_project1"
+author: "Thanh Dinh"
+date: "2024-04-07"
+output: html_document
+---
+
 # Task 1
 
 ```{r}
@@ -5,10 +12,8 @@ library(ggplot2)
 library(dplyr)
 data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-23/english_education.csv')
 ```
-```{r}
-data
-```
 
+Educational Attainment vs. Proportion in Full-time Higher Education
 ```{r}
 library(ggplot2)
 
@@ -22,6 +27,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
+Educational Attainment vs. Proportion in Full-time Out Of Work
 ```{r}
 ggplot(data, aes(x = level_3_at_age_18, 
                            y = activity_at_age_19_out_of_work)) +
@@ -33,6 +39,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
+Educational Attainment vs. Proportion of students earning more than £10000
 ```{r}
 ggplot(data, aes(x = level_3_at_age_18, 
                            y = activity_at_age_19_employment_with_earnings_above_10_000)) +
@@ -44,7 +51,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
-
+Correlation between Income Flag and Education Score
 ```{r}
 filtered_data <- data[data$income_flag %in% c("Higher deprivation towns", "Mid deprivation towns", "Lower deprivation towns"), ]
 
@@ -54,6 +61,7 @@ ggplot(filtered_data, aes(x = income_flag, y = education_score)) +
   ggtitle("Key Stage 4 Attainment by Income Flag")
 ```
 
+Correlation between Town sizes and Education Score
 ```{r}
 # Filter the data for the selected town size categories
 data_filtered <- subset(data, size_flag %in% c("Small Towns", "Medium Towns", "Large Towns"))

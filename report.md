@@ -47,7 +47,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
-![Screenshot 2024-04-09 at 22 41 01](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/26cec536-ec4b-4852-a8b7-76fdcc18ba48)
+![Screenshot 2024-04-09 at 22 43 56](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/94dcbfcc-1473-4edc-973b-d07d84f09776)
 
 In the images above, we could clearly see the pattern. Except the city and the BUAs that we do not have enough evidences to conclude the trend, generally, there is a positive correlation between Key Stage 4 attainment and the proportion of young people in full-time higher education, as indicated by the upward trend of the data points. It is clear that the higher educational attainments at the age 2012/13 is closely proportional to the proportion of the town/city's 2012/13 key stage 4 cohort in full time higher education at the age 19.
 

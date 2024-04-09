@@ -1,10 +1,15 @@
 # Report
 
 College of Engineering and Computer Science
+
 COMP4010. Data Visualization
+
 Team members:
+
 Dinh Van Thanh
+
 Nguyen Tiet Nguyen Khoi
+
 To Ba Son
 
 ## Introduction
@@ -169,6 +174,13 @@ In conclusion, we can conclude that smaller towns have better attainment.
 
 ## Question 2: England is known as a country in which coastal towns are considered left behind in socio-economy compared to non-coastal towns. What are some potential underlying reasons for the observed differences in educational attainment among young people across coastal and non-coastal towns in England?
 
+```{r}
+# Comparing educational scores between coastal and non-coastal towns
+ggplot(data = subset(data, !is.na(coastal)), aes(x=coastal, y=education_score, fill=coastal)) +
+  geom_boxplot() +
+  labs(title="Comparison of Educational Scores", y="Education Score", x="Town Type")
+```
+
 ![image](https://github.com/clarissdev/data-visualization-project-1/assets/53163183/614861eb-3d50-4908-b3dd-a09e9917b739)
 
 This box plot visualizes the comparison of educational scores across three categories of towns: coastal, non-coastal, and those with unspecified status (NA). The plot shows the median, interquartile range (IQR), and outliers for educational scores in each category. Through this, we can observe that:
@@ -180,6 +192,15 @@ This box plot visualizes the comparison of educational scores across three categ
 - Both coastal and non-coastal towns have outliers, which are the data points displayed as individual dots outside the whiskers of the box plot. These outliers indicate towns with exceptionally high or low educational scores compared to the rest of their group.
 
 Overall, this visualization highlights potential disparities in educational attainment between coastal and non-coastal towns, with non-coastal towns appearing to have a higher median educational score. However, the presence of outliers suggests there are exceptions to the general trend. These insights can help guide further investigation into the factors contributing to these differences, such as economic opportunities, access to educational resources, and other socio-economic factors specific to coastal and non-coastal regions.
+
+```{r}
+# Create a scatter plot to explore the relationship between job density and education scores
+ggplot(data = subset(subset(data, !is.na(coastal)), !is.na(job_density_flag)), aes(x=job_density_flag, y=education_score, fill=coastal)) +
+  geom_violin(trim=FALSE) +
+  geom_jitter(width=0.2, size=1, alpha=0.5) +
+  facet_wrap(~coastal) +
+  labs(title="Job Density vs. Education Score by Town Type", x="Job Density", y="Education Score")
+```
 
 ![image](https://github.com/clarissdev/data-visualization-project-1/assets/53163183/3be673c7-9ed9-4073-bdd9-0d7f627affc8)
 

@@ -16,7 +16,7 @@ ggplot(data, aes(x = level_3_at_age_18,
                            y = activity_at_age_19_full_time_higher_education)) +
   geom_point(color = "steelblue") +
   facet_wrap(~size_flag) +
-  labs(title = "Educational Attainment vs. Activities at Age 19",
+  labs(title = "Educational Attainment vs. Activities",
        x = "Key Stage 4 Attainment",
        y = "Proportion in Full-time Higher Education") +
   theme_minimal()

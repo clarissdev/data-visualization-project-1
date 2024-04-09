@@ -1,5 +1,12 @@
 # Report
 
+College of Engineering and Computer Science
+COMP4010. Data Visualization
+Team members:
+Dinh Van Thanh
+Nguyen Tiet Nguyen Khoi
+To Ba Son
+
 ## Introduction
 
 In educational research, understanding the disparities in academic achievement between children and young people residing in different town sizes has been a longstanding inquiry. This project seeks to address the question: why do children and young people in smaller towns tend to exhibit better academic performance compared to those in larger towns?

@@ -1,6 +1,8 @@
 # Task 1
 
 ```{r}
+library(ggplot2)
+library(dplyr)
 data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-23/english_education.csv')
 ```
 ```{r}
@@ -8,9 +10,12 @@ data
 ```
 
 ```{r}
-ggplot(data, aes(x = key_stage_4_attainment_school_year_2012_to_2013, 
+library(ggplot2)
+
+ggplot(data, aes(x = level_3_at_age_18, 
                            y = activity_at_age_19_full_time_higher_education)) +
   geom_point(color = "steelblue") +
+  facet_wrap(~size_flag) +
   labs(title = "Educational Attainment vs. Activities at Age 19",
        x = "Key Stage 4 Attainment",
        y = "Proportion in Full-time Higher Education") +
@@ -18,21 +23,24 @@ ggplot(data, aes(x = key_stage_4_attainment_school_year_2012_to_2013,
 ```
 
 ```{r}
-# Create a scatter plot
-ggplot(data, aes(x = key_stage_2_attainment_school_year_2007_to_2008, 
+ggplot(data, aes(x = level_3_at_age_18, 
                            y = activity_at_age_19_out_of_work)) +
   geom_point(color = "steelblue") +
-  labs(title = "Educational Attainment vs. Activities at Age 19",
-       x = "Key Stage 2 Attainment",
+  facet_wrap(~size_flag) +
+  labs(title = "Educational Attainment vs. Activities",
+       x = "Proportion of pupils achieving level 3 at age 18",
        y = "Proportion in Full-time Out Of Work") +
   theme_minimal()
+```
 
-ggplot(data, aes(x = key_stage_4_attainment_school_year_2012_to_2013, 
-                           y = activity_at_age_19_out_of_work)) +
+```{r}
+ggplot(data, aes(x = level_3_at_age_18, 
+                           y = activity_at_age_19_employment_with_earnings_above_10_000)) +
   geom_point(color = "steelblue") +
-  labs(title = "Educational Attainment vs. Activities at Age 19",
-       x = "Key Stage 4 Attainment",
-       y = "Proportion in Full-time Out Of Work") +
+  facet_wrap(~size_flag) +
+  labs(title = "Educational Attainment vs. Activities",
+       x = "Proportion of pupils achieving level 3 at age 18",
+       y = "Proportion of students earning more than £10000") +
   theme_minimal()
 ```
 

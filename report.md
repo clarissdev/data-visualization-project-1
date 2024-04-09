@@ -47,7 +47,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
-![alt text](/images/full_time_edu.png)
+![Screenshot 2024-04-09 at 22 41 01](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/26cec536-ec4b-4852-a8b7-76fdcc18ba48)
 
 In the images above, we could clearly see the pattern. Except the city and the BUAs that we do not have enough evidences to conclude the trend, generally, there is a positive correlation between Key Stage 4 attainment and the proportion of young people in full-time higher education, as indicated by the upward trend of the data points. It is clear that the higher educational attainments at the age 2012/13 is closely proportional to the proportion of the town/city's 2012/13 key stage 4 cohort in full time higher education at the age 19.
 
@@ -64,7 +64,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
-![alt text](/images/out_of_work.png)
+![Screenshot 2024-04-09 at 22 41 37](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/7033cf2f-679c-4a42-8a0a-c0c40d810b54)
 
 There appears to be a negative correlation between the proportion of young people in full-time employment (out of work) at age 19 and the proportion of pupils achieving Level 3 at age 18, as indicated by the downward trend of the data points in most town types.
 
@@ -81,7 +81,7 @@ ggplot(data, aes(x = level_3_at_age_18,
   theme_minimal()
 ```
 
-![alt text](/images/earning.png)
+![Screenshot 2024-04-09 at 22 42 04](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/5a840fdc-cb71-4321-8330-f010e128d0dd)
 
 There appears to be a slight negative correlation between the proportion of young people earning more than £10000 at age 19 and the proportion of pupils achieving Level 3 at age 18 across most town types. This suggests that areas with higher rates of youth unemployment tend to have lower educational attainment levels at age 18.
 
@@ -106,7 +106,7 @@ ggplot(filtered_data, aes(x = income_flag, y = education_score)) +
   ggtitle("Key Stage 4 Attainment by Income Flag")
 ```
 
-![alt text](/images/income_flag.png)
+![Screenshot 2024-04-09 at 22 42 23](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/06160b57-fc97-4acb-affb-2f1a76299b68)
 
 The box plot categorizes towns into three groups based on income deprivation levels: Higher deprivation towns, Lower deprivation towns, and Mid deprivation towns. These categories provide insights into how educational attainment varies across different socio-economic conditions. There are several intepretations from the chart:
 
@@ -148,7 +148,7 @@ ggplot(
   theme(axis.text.x = element_text(hjust = 1))
 ```
 
-![alt text](/images/town-size.png)
+![Screenshot 2024-04-09 at 22 42 47](https://github.com/clarissdev/data-visualization-project-1/assets/110231356/7014aa6d-ec8e-4ffe-aba7-6cfbd07a95ec)
 
 The scatter plot categorizes towns into three groups based on their size: Large Towns, Medium Towns, and Small Towns. These categories provide insights into how educational attainment varies across different town sizes. The scatter plot displays individual data points for each town, allowing for a visual assessment of the distribution of educational attainment scores within each town size category. The spread of data points provides information about the variability in educational attainment across towns of different sizes. The horizontal line across the plot represents the average attainment score across all towns included in the analysis. This line serves as a reference point for comparing the educational attainment scores of individual towns to the overall average.
 
